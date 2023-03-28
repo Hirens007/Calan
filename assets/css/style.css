@@ -1,438 +1,514 @@
-body {
-  font-family: "DM Sans", sans-serif;
-  font-size: 16px;
-  font-weight: 400;
-  color: #12022f;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background-color: black;
-  letter-spacing: -0.36px;
-}
-/***Button CSS***/
-.btn {
-  padding: 15px 24px;
-  border-radius: 28px;
-  color: #12022f;
-  font-size: 16px;
-  font-weight: 700;
-  line-height: 26px;
-}
-.btn:hover {
-  background-color: #ffdda9;
-  border-color: #ffdda9;
-  color: #12022f;
-}
-.btn-primary {
-  background-color: #ffdda9;
-  border-color: #ffdda9;
-}
-.btn-outline-primary {
-  border: 2px solid #e7e5ea;
-}
-button:focus {
-  outline: 0px !important;
-  box-shadow: none !important;
-}
-/***END Button CSS***/
+/*
+! tailwindcss v3.2.7 | MIT License | https://tailwindcss.com
+*/
 
-/***Navigation CSS***/
-.navbar-nav .nav-link {
-  font-size: 16px;
-  font-weight: 700;
-  color: #12022f;
-  padding: 10px 0px;
-}
-.navbar-nav .nav-link:hover{
-color: #FFDDA9;
-}
-.navbar-collapse {
-  position: absolute;
-  z-index: 10;
-  top: 100px;
-  left: 0px;
-  background-color: #fff;
-  width: 100%;
-  padding: 0 20px;
-}
-.navbar-toggler {
-  width: 58px;
-  height: 58px;
-  padding: 16px;
-  border-radius: 100%;
-  border: 2px solid #e7e5ea;
-  background-color: transparent;
-}
-.header-1, .header-2, .header-3,
-.header-4, .header-5, .header-6,
-.header-7, .header-8, .header-9,
-.header-10, .header-11, .header-12,
-.header-13, .header-14, .header-15,
-.header-16, .header-17, .header-18,
-.header-19, .header-20, .header-21,
-.header-22, .header-23, .header-24,
-.header-25, .header-26 {
-  padding: 21px 0px;
-}
-/***END Navigation CSS***/
+/*
+1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
+2. Allow adding a border to an element by just adding a border-width. (https://github.com/tailwindcss/tailwindcss/pull/116)
+*/
 
-/***Search with menu CSS***/
-.search-container {
-  position: relative;
-  display: inline-block;
-  margin: 0px 20px;
-  height: 25px;
-  vertical-align: bottom;
-}
-.mglass {
-  display: inline-block;
-  pointer-events: none;
-}
-.searchbutton {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-}
-.search:focus + .searchbutton {
-  transition-duration: 0.4s;
-  -moz-transition-duration: 0.4s;
-  -webkit-transition-duration: 0.4s;
-  -o-transition-duration: 0.4s;
-  background-color: white;
-  color: black;
-}
-.button {
-  display: inline-block;
-  text-align: center;
-  color: white;
-  text-decoration: none;
-  cursor: pointer;
-  -moz-user-select: none;
-  -khtml-user-select: none;
-  -webkit-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-.button:hover {
-  transition-duration: 0.4s;
-  -moz-transition-duration: 0.4s;
-  -webkit-transition-duration: 0.4s;
-  -o-transition-duration: 0.4s;
-  background-color: white;
-  color: black;
-}
-.search {
-  position: absolute;
-  left: 49px;
-  background-color: white;
-  outline: none;
-  border: none;
-  padding: 0;
-  width: 0;
-  height: 100%;
-  z-index: 10;
-  transition-duration: 0.4s;
-  -moz-transition-duration: 0.4s;
-  -webkit-transition-duration: 0.4s;
-  -o-transition-duration: 0.4s;
-  top: 0px;
-}
-.search:focus {
-  width: 285px; /* Bar width+1px */
-  padding: 0 16px 0 0;
-}
-
-.expandright {
-  left: auto;
-  right: 20px; /* Button width-1px */
-}
-.expandright:focus {
-  padding: 0 0 0 16px;
-}
-/***END Search with menu CSS***/
-
-/***Search with Round CSS***/
-.search-input input[type="text"] {
-  width: 136px;
+*,
+::before,
+::after {
   box-sizing: border-box;
-  border: 2px solid #e7e5ea;
-  border-radius: 28px;
-  font-size: 16px;
-  font-weight: 700;
-  background-color: white;
-  background-image: url("../img/search.svg");
-  background-position: 23px 14px;
-  background-repeat: no-repeat;
-  padding: 14px 24px 14px 54px;
-  color: #12022f;
-  letter-spacing: -0.36px;
+  /* 1 */
+  border-width: 0;
+  /* 2 */
+  border-style: solid;
+  /* 2 */
+  border-color: #e5e7eb;
+  /* 2 */
 }
 
-.search-input input[type="text"]:focus {
-  border: 2px solid #e7e5ea;
+::before,
+::after {
+  --tw-content: '';
 }
-.search-input input[type="text"]:focus-visible {
-  outline: 0px;
-}
-/***END Search with Round CSS***/
 
-/***Navication***/
-.header-11 a.logo {
-  margin-left: -6rem;
-}
-.header-15 a.logo {
-  margin-left: 40px;
-}
-/***END Navication***/
+/*
+1. Use a consistent sensible line-height in all browsers.
+2. Prevent adjustments of font size after orientation changes in iOS.
+3. Use a more readable tab size.
+4. Use the user's configured `sans` font-family by default.
+5. Use the user's configured `sans` font-feature-settings by default.
+*/
 
-/***Mega Submenu Navication***/
-.mega-drop-down .dropdown-menu {
-  width: 100%;
-  top: 101px;
-  border-radius: 0px;
-  border: 0px;
-  padding: 40px 0px;
-  margin: 0px;
+html {
+  line-height: 1.5;
+  /* 1 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
+  -moz-tab-size: 4;
+  /* 3 */
+  -o-tab-size: 4;
+     tab-size: 4;
+  /* 3 */
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  /* 4 */
+  font-feature-settings: normal;
+  /* 5 */
 }
-.maga-menu h3 {
-  font-size: 16px;
-  line-height: 26px;
-  font-weight: 700;
-  color: #12022f;
-  margin-bottom: 16px;
+
+/*
+1. Remove the margin in all browsers.
+2. Inherit line-height from `html` so users can set them as a class directly on the `html` element.
+*/
+
+body {
+  margin: 0;
+  /* 1 */
+  line-height: inherit;
+  /* 2 */
 }
-.maga-menu h2 {
-  font-size: 22px;
-  line-height: 32px;
-  font-weight: 700;
-  color: #12022f;
-  margin-bottom: 24px;
+
+/*
+1. Add the correct height in Firefox.
+2. Correct the inheritance of border color in Firefox. (https://bugzilla.mozilla.org/show_bug.cgi?id=190655)
+3. Ensure horizontal rules are visible by default.
+*/
+
+hr {
+  height: 0;
+  /* 1 */
+  color: inherit;
+  /* 2 */
+  border-top-width: 1px;
+  /* 3 */
 }
-.maga-menu ul {
-  list-style: none;
-  padding: 0px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
+
+/*
+Add the correct text decoration in Chrome, Edge, and Safari.
+*/
+
+abbr:where([title]) {
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted;
 }
-.maga-menu ul li a {
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 24px;
-  color: #594d6d;
-  text-decoration: none;
+
+/*
+Remove the default font size and weight for headings.
+*/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
 }
-.magemenu-img22 {
-  max-width: 445px;
-  height: 226px;
-  border-radius: 16px;
-  overflow: hidden;
+
+/*
+Reset links to optimize for opt-in styling instead of opt-out.
+*/
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+/*
+Add the correct font weight in Edge and Safari.
+*/
+
+b,
+strong {
+  font-weight: bolder;
+}
+
+/*
+1. Use the user's configured `mono` font family by default.
+2. Correct the odd `em` font sizing in all browsers.
+*/
+
+code,
+kbd,
+samp,
+pre {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */
+}
+
+/*
+Add the correct font size in all browsers.
+*/
+
+small {
+  font-size: 80%;
+}
+
+/*
+Prevent `sub` and `sup` elements from affecting the line height in all browsers.
+*/
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
   position: relative;
+  vertical-align: baseline;
 }
-.magemenu-img22 img {
-  position: relative;
-  top: -80px;
-  left: 0px;
-  width: 100%;
+
+sub {
+  bottom: -0.25em;
 }
-.magemenu-img22 .btn {
-  padding: 12px 20px;
-  font-size: 14px;
-  line-height: 24px;
+
+sup {
+  top: -0.5em;
 }
-.magemenu-img22 p {
-  max-width: 190px;
-  font-size: 18px;
-  font-weight: 700;
-  line-height: 27px;
+
+/*
+1. Remove text indentation from table contents in Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=999088, https://bugs.webkit.org/show_bug.cgi?id=201297)
+2. Correct table border color inheritance in all Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=935729, https://bugs.webkit.org/show_bug.cgi?id=195016)
+3. Remove gaps between table borders by default.
+*/
+
+table {
+  text-indent: 0;
+  /* 1 */
+  border-color: inherit;
+  /* 2 */
+  border-collapse: collapse;
+  /* 3 */
 }
-.magemenu-img22 .text-dateil {
-  top: 40px;
-  left: 95px;
+
+/*
+1. Change the font styles in all browsers.
+2. Remove the margin in Firefox and Safari.
+3. Remove default padding in all browsers.
+*/
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  /* 1 */
+  font-size: 100%;
+  /* 1 */
+  font-weight: inherit;
+  /* 1 */
+  line-height: inherit;
+  /* 1 */
+  color: inherit;
+  /* 1 */
+  margin: 0;
+  /* 2 */
+  padding: 0;
+  /* 3 */
 }
-.menu24{
-  width: 100%;
+
+/*
+Remove the inheritance of text transform in Edge and Firefox.
+*/
+
+button,
+select {
+  text-transform: none;
 }
-/***END Mega Submenu Navication***/
-.header-26 .menuwithimage{
-  display: flex;
-  gap: 30px;
+
+/*
+1. Correct the inability to style clickable types in iOS and Safari.
+2. Remove default button styles.
+*/
+
+button,
+[type='button'],
+[type='reset'],
+[type='submit'] {
+  -webkit-appearance: button;
+  /* 1 */
+  background-color: transparent;
+  /* 2 */
+  background-image: none;
+  /* 2 */
 }
-.header-26 .menuwithimage .dropmenu{
-  width: 255px;
-  flex: none;
+
+/*
+Use the modern Firefox focus style for all focusable elements.
+*/
+
+:-moz-focusring {
+  outline: auto;
 }
-.header-26 .menuwithimage .dropmenu ul{
+
+/*
+Remove the additional `:invalid` styles in Firefox. (https://github.com/mozilla/gecko-dev/blob/2f9eacd9d3d995c937b4251a5557d95d494c9be1/layout/style/res/forms.css#L728-L737)
+*/
+
+:-moz-ui-invalid {
+  box-shadow: none;
+}
+
+/*
+Add the correct vertical alignment in Chrome and Firefox.
+*/
+
+progress {
+  vertical-align: baseline;
+}
+
+/*
+Correct the cursor style of increment and decrement buttons in Safari.
+*/
+
+::-webkit-inner-spin-button,
+::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/*
+1. Correct the odd appearance in Chrome and Safari.
+2. Correct the outline style in Safari.
+*/
+
+[type='search'] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  outline-offset: -2px;
+  /* 2 */
+}
+
+/*
+Remove the inner padding in Chrome and Safari on macOS.
+*/
+
+::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/*
+1. Correct the inability to style clickable types in iOS and Safari.
+2. Change font properties to `inherit` in Safari.
+*/
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  /* 1 */
+  font: inherit;
+  /* 2 */
+}
+
+/*
+Add the correct display in Chrome and Safari.
+*/
+
+summary {
+  display: list-item;
+}
+
+/*
+Removes the default spacing and border for appropriate elements.
+*/
+
+blockquote,
+dl,
+dd,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+figure,
+p,
+pre {
+  margin: 0;
+}
+
+fieldset {
+  margin: 0;
+  padding: 0;
+}
+
+legend {
+  padding: 0;
+}
+
+ol,
+ul,
+menu {
   list-style: none;
+  margin: 0;
+  padding: 0;
 }
-.header-26 .menuwithimage .dropmenu ul li a{
-font-size: 14px;
-line-height: 24px;
-font-weight: 700;
-color: #fff;
-text-decoration: none;
-}
-.header-26 .menuwithimage .dropmenu ul li a:hover,
-.header-26 .menuwithimage .dropmenu ul li a.active{
-  background-color: #321370;
-  border-radius: 8px;
-  }
 
+/*
+Prevent resizing textareas horizontally by default.
+*/
 
-/***Theme Navication***/
-.bg-seconder {
-  background-color: #391484;
-  border-color: rgb(225 225 225 / 10%) !important;
+textarea {
+  resize: vertical;
 }
-.bg-seconder .navbar-nav .nav-link {
-  color: #fff;
-}
-.bg-seconder .navbar-nav .nav-link:hover {
-  color: #FFDDA9;
-}
-.bg-seconder .navbar-collapse {
-  background-color: #391484;
-}
-.bg-seconder .search {
-  background-color: #391484;
-  color: #fff;
-}
-.bg-seconder .search:focus + .searchbutton {
-  background-color: #391484;
-}
-.bg-seconder .navbar-toggler {
-  border: 2px solid rgb(231 229 234 / 10%);
-}
-.bg-seconder .btn {
-  color: #fff;
-}
-.bg-seconder .btn:hover {
-  color: #12022f;
-}
-.bg-seconder .btn-outline-primary {
-  border: 2px solid rgb(231 229 234 / 10%);
-}
-.bg-seconder .btn-primary {
-  color: #12022f;
-}
-.bg-seconder .search-input input[type="text"] {
-  background-color: #391484;
-  border: 2px solid rgb(231 229 234 / 10%);
-  background-image: url("../img/search-light.svg");
-  background-position: 23px 14px;
-  background-repeat: no-repeat;
-  padding: 14px 24px 14px 54px;
-  color: #fff;
-}
-.bg-seconder .mega-drop-down .dropdown-menu{
-  background-color: #391484;
-  top: 99px;
-}
-.bg-seconder .maga-menu h3{
-  color: #fff;
-}
-.bg-seconder .maga-menu ul li a{
-  color: rgb(225 225 225 / 50%);
-}
-.bg-seconder .maga-menu ul li a.moreitem{
-  color: #FFDDA9;
-}
-/***END Theme Navication***/
 
-@media (min-width: 992px) {
-  .navbar-expand-lg .navbar-collapse {
-    position: static;
-    padding: 0px;
-    z-index: auto;
-    background-color: transparent;
-  }
-  .navbar-expand-lg .navbar-nav .nav-link {
-    padding: 0px 20px;
-  }
-  .header-1 .search:focus {
-    width: 325px; /* Bar width+1px */
-  }
-  .header-3 {
-    padding: 37px 0px;
-    gap: 64px;
-  }
-  .header-3 .search:focus {
-    width: 465px; /* Bar width+1px */
-  }
-  .header-4 {
-    padding: 20px 0px;
-    gap: 64px;
-  }
-  .header-5 {
-    padding: 37px 0px;
-    gap: 64px;
-  }
-  .header-5 .search:focus {
-    width: 425px; /* Bar width+1px */
-  }
-  .header-9 {
-    padding: 35px 0px;
-    gap: 31px;
-  }
-  .header-10 a {
-    margin-left: 5rem;
-  }
-  .header-11.navbar-expand-lg .navbar-toggler {
-    display: block !important;
-  }
-  .header-11 a.logo {
-    margin-left: 17.7rem;
-  }
-  .header-12 {
-    padding: 20px 0;
-  }
-  .header-12 a.logo {
-    margin-left: -8rem;
-  }
-  .header-13 {
-    padding: 35px 0px;
-    gap: 31px;
-  }
-  .header-13 .navbar-nav li a {
-    padding: 0 20px;
-    position: relative;
-  }
-  .header-13 .navbar-nav li a::before {
-    position: absolute;
-    content: "";
-    bottom: -8px;
-    z-index: 99;
-    width: 32px;
-    height: 2px;
-    background-color: transparent;
-    left: 50%;
-    margin-left: -16px;
-    transition: all 0.15s;
-  }
-  .header-13 .navbar-nav li a:hover::before {
-    background-color: white;
-  }
-  .header-14 {
-    padding: 20px 0;
-  }
-  .header-14 a.logo {
-    margin-left: -3rem;
-  }
-  .header-19 {
-    padding: 38px 0;
-  }
-  .menu24{
-    width: auto;
-  }
-  .header-25 {
-    padding: 20px 0;
-  }
-  .header-25 a.logo {
-    margin-left: -3rem;
-  }
-  .header-26 {
-    padding: 20px 0;
-  }
-  .header-26 a.logo {
-    margin-left: -3rem;
-  }
+/*
+1. Reset the default placeholder opacity in Firefox. (https://github.com/tailwindlabs/tailwindcss/issues/3300)
+2. Set the default placeholder color to the user's configured gray 400 color.
+*/
+
+input::-moz-placeholder, textarea::-moz-placeholder {
+  opacity: 1;
+  /* 1 */
+  color: #9ca3af;
+  /* 2 */
+}
+
+input::placeholder,
+textarea::placeholder {
+  opacity: 1;
+  /* 1 */
+  color: #9ca3af;
+  /* 2 */
+}
+
+/*
+Set the default cursor for buttons.
+*/
+
+button,
+[role="button"] {
+  cursor: pointer;
+}
+
+/*
+Make sure disabled buttons don't get the pointer cursor.
+*/
+
+:disabled {
+  cursor: default;
+}
+
+/*
+1. Make replaced elements `display: block` by default. (https://github.com/mozdevs/cssremedy/issues/14)
+2. Add `vertical-align: middle` to align replaced elements more sensibly by default. (https://github.com/jensimmons/cssremedy/issues/14#issuecomment-634934210)
+   This can trigger a poorly considered lint error in some tools but is included by design.
+*/
+
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
+  display: block;
+  /* 1 */
+  vertical-align: middle;
+  /* 2 */
+}
+
+/*
+Constrain images and videos to the parent width and preserve their intrinsic aspect ratio. (https://github.com/mozdevs/cssremedy/issues/14)
+*/
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Make elements with the HTML hidden attribute stay hidden by default */
+
+[hidden] {
+  display: none;
+}
+
+*, ::before, ::after {
+  --tw-border-spacing-x: 0;
+  --tw-border-spacing-y: 0;
+  --tw-translate-x: 0;
+  --tw-translate-y: 0;
+  --tw-rotate: 0;
+  --tw-skew-x: 0;
+  --tw-skew-y: 0;
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
+  --tw-pan-x:  ;
+  --tw-pan-y:  ;
+  --tw-pinch-zoom:  ;
+  --tw-scroll-snap-strictness: proximity;
+  --tw-ordinal:  ;
+  --tw-slashed-zero:  ;
+  --tw-numeric-figure:  ;
+  --tw-numeric-spacing:  ;
+  --tw-numeric-fraction:  ;
+  --tw-ring-inset:  ;
+  --tw-ring-offset-width: 0px;
+  --tw-ring-offset-color: #fff;
+  --tw-ring-color: rgb(59 130 246 / 0.5);
+  --tw-ring-offset-shadow: 0 0 #0000;
+  --tw-ring-shadow: 0 0 #0000;
+  --tw-shadow: 0 0 #0000;
+  --tw-shadow-colored: 0 0 #0000;
+  --tw-blur:  ;
+  --tw-brightness:  ;
+  --tw-contrast:  ;
+  --tw-grayscale:  ;
+  --tw-hue-rotate:  ;
+  --tw-invert:  ;
+  --tw-saturate:  ;
+  --tw-sepia:  ;
+  --tw-drop-shadow:  ;
+  --tw-backdrop-blur:  ;
+  --tw-backdrop-brightness:  ;
+  --tw-backdrop-contrast:  ;
+  --tw-backdrop-grayscale:  ;
+  --tw-backdrop-hue-rotate:  ;
+  --tw-backdrop-invert:  ;
+  --tw-backdrop-opacity:  ;
+  --tw-backdrop-saturate:  ;
+  --tw-backdrop-sepia:  ;
+}
+
+::backdrop {
+  --tw-border-spacing-x: 0;
+  --tw-border-spacing-y: 0;
+  --tw-translate-x: 0;
+  --tw-translate-y: 0;
+  --tw-rotate: 0;
+  --tw-skew-x: 0;
+  --tw-skew-y: 0;
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
+  --tw-pan-x:  ;
+  --tw-pan-y:  ;
+  --tw-pinch-zoom:  ;
+  --tw-scroll-snap-strictness: proximity;
+  --tw-ordinal:  ;
+  --tw-slashed-zero:  ;
+  --tw-numeric-figure:  ;
+  --tw-numeric-spacing:  ;
+  --tw-numeric-fraction:  ;
+  --tw-ring-inset:  ;
+  --tw-ring-offset-width: 0px;
+  --tw-ring-offset-color: #fff;
+  --tw-ring-color: rgb(59 130 246 / 0.5);
+  --tw-ring-offset-shadow: 0 0 #0000;
+  --tw-ring-shadow: 0 0 #0000;
+  --tw-shadow: 0 0 #0000;
+  --tw-shadow-colored: 0 0 #0000;
+  --tw-blur:  ;
+  --tw-brightness:  ;
+  --tw-contrast:  ;
+  --tw-grayscale:  ;
+  --tw-hue-rotate:  ;
+  --tw-invert:  ;
+  --tw-saturate:  ;
+  --tw-sepia:  ;
+  --tw-drop-shadow:  ;
+  --tw-backdrop-blur:  ;
+  --tw-backdrop-brightness:  ;
+  --tw-backdrop-contrast:  ;
+  --tw-backdrop-grayscale:  ;
+  --tw-backdrop-hue-rotate:  ;
+  --tw-backdrop-invert:  ;
+  --tw-backdrop-opacity:  ;
+  --tw-backdrop-saturate:  ;
+  --tw-backdrop-sepia:  ;
 }
